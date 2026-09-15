@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from importlib.metadata import PackageNotFoundError, version
+
 from altissimo.dnavisit.client import DNAvisitClient, DNAvisitSettings
 from altissimo.dnavisit.exceptions import (
     DNAvisitAuthenticationFailedError,
@@ -28,6 +30,11 @@ from altissimo.dnavisit.types import (
     YesNoEnum,
 )
 
+try:
+    __version__ = version("dnavisit-python")
+except PackageNotFoundError:  # pragma: no cover — editable install without metadata
+    __version__ = "0.1.0"
+
 __all__ = [
     "CHAT_BLURB_CARDIO_NEGATIVE",
     "CHAT_BLURB_CARDIO_VUS",
@@ -51,4 +58,5 @@ __all__ = [
     "TestStatusEnum",
     "TestTypeEnum",
     "YesNoEnum",
+    "__version__",
 ]
