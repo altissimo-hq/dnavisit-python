@@ -1,7 +1,7 @@
 [project]
 name = "dnavisit-python"
 version = "0.1.0"
-description = "Altissimo Python client for dnavisit-python"
+description = "Python client for the DNAvisit API to authenticate and submit pre-test, post-test, and insights genetic testing requests"
 readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=3.11"
